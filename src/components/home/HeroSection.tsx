@@ -17,11 +17,11 @@ const HeroSection = () => {
 
   // Hero images array
   const heroImages = [
-    "/lovable-uploads/81c3d435-3dfe-4e97-8450-f82b3e1a37e3.png",
-    "/lovable-uploads/a35b0c28-37ef-4dec-817a-7d5718df7610.png",
-    "/lovable-uploads/d3bd7961-f652-47fe-97d8-7a5d8a108600.png",
-    "/lovable-uploads/141c6511-2c68-4371-9970-2eb20f49df9c.png",
-    "/lovable-uploads/8b95c223-711b-460e-89c2-933e0bcfa9d0.png",
+    "/lovable-uploads/edf50425-4a8c-40ae-9d10-f8164067b6b6.png",
+    "/lovable-uploads/c269ac45-4010-4f11-b689-f86fd961c3ee.png",
+    "/lovable-uploads/9e8327a7-be64-46a3-a16c-2a1c0f3b1857.png",
+    "/lovable-uploads/0489b82a-0392-4f4b-bc9c-6f60f2a335cb.png",
+    "/lovable-uploads/6026693b-c901-4760-ae1e-775b17a711ea.png",
   ];
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full" 
                 style={{ 
                   backgroundImage: `url(${image})`,
-                  opacity: 0.6
+                  opacity: 0.7
                 }} 
               />
             </CarouselItem>
