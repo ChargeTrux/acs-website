@@ -61,7 +61,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-white text-2xl font-bold">ACS</span>
+            <img 
+              src="/lovable-uploads/3fdb763a-8ceb-4c99-810e-21f09d8f1e98.png" 
+              alt="Advanced Charging Systems Logo" 
+              className="h-12" 
+            />
           </Link>
 
           {/* Desktop Navigation */}

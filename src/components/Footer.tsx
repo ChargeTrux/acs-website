@@ -10,7 +10,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1 - Logo and Description */}
           <div>
-            <h2 className="text-2xl font-bold mb-4">ACS</h2>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/3fdb763a-8ceb-4c99-810e-21f09d8f1e98.png" 
+                alt="Advanced Charging Systems Logo" 
+                className="h-12" 
+              />
+            </div>
             <p className="text-gray-300 mb-6 font-open">
               Advanced Charging Systems and Integration delivers end-to-end EV charging solutions for commercial and fleet applications, optimizing performance through expert design and implementation.
             </p>
