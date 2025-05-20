@@ -97,6 +97,25 @@ const Navbar = () => {
       setActiveDropdown(name);
     }
   };
+
+  // Function to handle smooth scrolling to section
+  const handleSectionNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    const [pagePath, sectionId] = path.split('#');
+    
+    // If we're already on the correct page, prevent default behavior and scroll to section
+    if (location.pathname === pagePath && sectionId) {
+      e.preventDefault();
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        
+        // Close mobile menu if it's open
+        if (isOpen) {
+          setIsOpen(false);
+        }
+      }
+    }
+  };
   
   return <nav className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"}`}>
       <div className="container mx-auto px-4">
@@ -120,9 +139,16 @@ const Navbar = () => {
                 {/* Dropdown for desktop */}
                 {item.dropdown && <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     <div className="py-2">
-                      {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block px-4 py-3 text-gray-800 hover:bg-[#0075FF] hover:text-white transition-colors">
+                      {item.dropdown.map(dropdownItem => 
+                        <Link 
+                          key={dropdownItem.name} 
+                          to={dropdownItem.path} 
+                          className="block px-4 py-3 text-gray-800 hover:bg-[#0075FF] hover:text-white transition-colors"
+                          onClick={(e) => handleSectionNavigation(e, dropdownItem.path)}
+                        >
                           {dropdownItem.name}
-                        </Link>)}
+                        </Link>
+                      )}
                     </div>
                   </div>}
               </div>)}
@@ -152,9 +178,19 @@ const Navbar = () => {
                       <span>{activeDropdown === item.name ? "-" : "+"}</span>
                     </button>
                     {activeDropdown === item.name && <div className="pl-4 mt-2 border-l border-gray-600">
-                        {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block py-2 text-white hover:text-[#00C65E]" onClick={() => setIsOpen(false)}>
+                        {item.dropdown.map(dropdownItem => 
+                          <Link 
+                            key={dropdownItem.name} 
+                            to={dropdownItem.path} 
+                            className="block py-2 text-white hover:text-[#00C65E]" 
+                            onClick={(e) => {
+                              handleSectionNavigation(e, dropdownItem.path);
+                              setIsOpen(false);
+                            }}
+                          >
                             {dropdownItem.name}
-                          </Link>)}
+                          </Link>
+                        )}
                       </div>}
                   </> : <Link to={item.path} className={`block text-white hover:text-[#00C65E] py-2 ${isActive(item.path) ? "border-l-[3px] border-[#00C65E] pl-2" : ""}`} onClick={() => setIsOpen(false)}>
                     {item.name}
