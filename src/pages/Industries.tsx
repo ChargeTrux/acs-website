@@ -282,10 +282,11 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/5387b306-1722-405a-b522-1b9477c93dd5.png" 
-                alt="Utilities and municipal EV charging projects" 
+                src="/lovable-uploads/330577b1-31fe-456a-8bd7-faa54d9f0900.png" 
+                alt="EV charging station at a U.S. Post Office" 
                 className="rounded-lg shadow-lg w-full"
               />
+              <p className="text-sm text-gray-500 mt-2 text-center">Public charging infrastructure at a government facility</p>
             </div>
           </div>
         </div>
@@ -349,10 +350,11 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/27c461ed-71df-454a-b789-8fef857a27a9.png" 
-                alt="Mobile and off-grid EV charging solutions" 
+                src="/lovable-uploads/fc9d7acf-19bd-478c-a087-cab38d0847f0.png" 
+                alt="Mobile off-grid solar-powered EV charging station" 
                 className="rounded-lg shadow-lg w-full"
               />
+              <p className="text-sm text-gray-500 mt-2 text-center">Solar-powered off-grid charging solution with battery storage</p>
             </div>
           </div>
         </div>
@@ -416,10 +418,11 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/3f0405ff-4b08-454c-bed9-b1354aa492a7.png" 
-                alt="Investment group EV charging solutions" 
+                src="/lovable-uploads/09cbbd00-50b9-4514-8d63-9af99fc7251b.png" 
+                alt="Corporate EV charging hub with multiple charging stations" 
                 className="rounded-lg shadow-lg w-full"
               />
+              <p className="text-sm text-gray-500 mt-2 text-center">High-capacity charging plaza in commercial district</p>
             </div>
           </div>
         </div>
