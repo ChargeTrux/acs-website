@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -93,9 +94,9 @@ const Navbar = () => {
   return <nav className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo - updated size to match screenshot */}
+          {/* Logo - updated with new logo */}
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" alt="Advanced Charging Systems Logo" className="h-12 object-fill" />
+            <img src="/lovable-uploads/206ce4f6-35bb-4d83-b3f6-bf6ca3fbca59.png" alt="Advanced Charging Systems Logo" className="h-8 object-fill" />
           </Link>
 
           {/* Desktop Navigation */}

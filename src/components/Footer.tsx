@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Linkedin, MapPin } from "lucide-react";
@@ -11,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" 
+                src="/lovable-uploads/206ce4f6-35bb-4d83-b3f6-bf6ca3fbca59.png" 
                 alt="Advanced Charging Systems Logo" 
                 className="h-12" 
               />
