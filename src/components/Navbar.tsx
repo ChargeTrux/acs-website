@@ -1,12 +1,34 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  
+  // Add scroll event listener to track when page is scrolled
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user is scrolling up
+      if (window.scrollY <= 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -56,7 +78,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#003B73] sticky top-0 z-50">
+    <nav className={`sticky top-0 z-50 transition-colors duration-300 ${
+      scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -64,7 +88,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" 
               alt="Advanced Charging Systems Logo" 
-              className="h-56" 
+              className="h-16" 
             />
           </Link>
 
@@ -74,7 +98,9 @@ const Navbar = () => {
               <div key={item.name} className="relative group">
                 <Link 
                   to={item.path}
-                  className={`text-white hover:text-[#F5A623] font-medium transition-colors ${
+                  className={`${
+                    scrolled ? "text-[#0A1A2F] hover:text-[#F5A623]" : "text-white hover:text-[#F5A623]"
+                  } font-medium transition-colors ${
                     isActive(item.path) ? "border-b-[3px] border-[#F5A623]" : ""
                   }`}
                   onClick={(e) => {
@@ -118,7 +144,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-white p-2"
+              className={`p-2 ${scrolled ? "text-[#0A1A2F]" : "text-white"}`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -128,7 +154,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-[#003B73] border-t border-gray-700">
+        <div className="md:hidden bg-[#0A1A2F] border-t border-gray-700">
           <div className="container px-4 py-4">
             {navItems.map((item) => (
               <div key={item.name} className="py-2">
