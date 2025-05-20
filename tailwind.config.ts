@@ -66,7 +66,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// New custom colors based on the brand palette
+				brand: {
+					'dark-green': '#1D741B',
+					'light-green': '#76B947',
+					'light-bg': '#F4F7FA',
+					'card-green': '#DDFFE7',
+					'blue': '#0000FF',
+					'dark-text': '#333333',
+					'light-text': '#FFFFFF',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
