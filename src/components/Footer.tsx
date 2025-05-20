@@ -8,21 +8,19 @@ const Footer = () => {
     <footer className="bg-[#0A1A2F] text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Column 1 - Logo and Description - Repositioned */}
-          <div className="flex flex-col">
-            <div className="mb-2">
+          {/* Column 1 - Logo and Description */}
+          <div>
+            <div className="mb-4">
               <img 
-                src="/lovable-uploads/a14e6724-dbe0-4dbb-9d77-6b229d560df3.png" 
+                src="/lovable-uploads/206ce4f6-35bb-4d83-b3f6-bf6ca3fbca59.png" 
                 alt="Advanced Charging Systems Logo" 
                 className="h-48" 
               />
             </div>
-            <div className="mt-2">
-              <h3 className="text-xl font-semibold mb-2 font-montserrat text-white">Connecting Power to Possibility</h3>
-              <p className="text-gray-300 mb-6 font-open">
-                Advanced Charging Systems delivers comprehensive EV charging solutions for commercial and fleet applications, optimizing performance through expert design and implementation.
-              </p>
-            </div>
+            <h3 className="text-xl font-semibold mb-2 font-montserrat text-white">Connecting Power to Possibility</h3>
+            <p className="text-gray-300 mb-6 font-open">
+              Advanced Charging Systems delivers comprehensive EV charging solutions for commercial and fleet applications, optimizing performance through expert design and implementation.
+            </p>
           </div>
           
           {/* Column 2 - Quick Links */}
