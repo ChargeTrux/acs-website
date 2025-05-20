@@ -27,9 +27,11 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
   const isActive = (path: string) => {
     return location.pathname === path;
   };
+  
   const navItems = [{
     name: "Home",
     path: "/"
@@ -81,10 +83,13 @@ const Navbar = () => {
     name: "Contact Us",
     path: "/contact"
   }];
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  
   const handleDropdownToggle = (name: string) => {
     if (activeDropdown === name) {
       setActiveDropdown(null);
@@ -92,6 +97,7 @@ const Navbar = () => {
       setActiveDropdown(name);
     }
   };
+  
   return <nav className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -107,14 +113,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map(item => <div key={item.name} className="relative group">
-                <Link to={item.path} className={`${scrolled ? "text-[#0A1A2F] hover:text-[#F5A623]" : "text-white hover:text-[#F5A623]"} font-medium transition-colors ${isActive(item.path) ? "border-b-[3px] border-[#F5A623]" : ""}`}>
+                <Link to={item.path} className={`${scrolled ? "text-[#0A1A2F] hover:text-[#0075FF]" : "text-white hover:text-[#00C65E]"} font-medium transition-colors ${isActive(item.path) ? "border-b-[3px] border-[#00C65E]" : ""}`}>
                   {item.name}
                 </Link>
                 
                 {/* Dropdown for desktop */}
                 {item.dropdown && <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     <div className="py-2">
-                      {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block px-4 py-3 text-gray-800 hover:bg-[#2E5090] hover:text-white transition-colors">
+                      {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block px-4 py-3 text-gray-800 hover:bg-[#0075FF] hover:text-white transition-colors">
                           {dropdownItem.name}
                         </Link>)}
                     </div>
@@ -123,7 +129,7 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <Button asChild className="hidden md:block bg-[#F5A623] hover:bg-[#E09000] text-white font-semibold rounded-lg transition-all">
+          <Button asChild className="hidden md:block bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold rounded-lg transition-all hover:scale-[1.02]">
             <Link to="/contact">Request a Consultation</Link>
           </Button>
 
@@ -141,21 +147,21 @@ const Navbar = () => {
           <div className="container px-4 py-4">
             {navItems.map(item => <div key={item.name} className="py-2">
                 {item.dropdown ? <>
-                    <button onClick={() => handleDropdownToggle(item.name)} className={`flex items-center justify-between w-full text-left text-white py-2 ${isActive(item.path) ? "border-l-[3px] border-[#F5A623] pl-2" : ""}`}>
+                    <button onClick={() => handleDropdownToggle(item.name)} className={`flex items-center justify-between w-full text-left text-white py-2 ${isActive(item.path) ? "border-l-[3px] border-[#00C65E] pl-2" : ""}`}>
                       <span>{item.name}</span>
                       <span>{activeDropdown === item.name ? "-" : "+"}</span>
                     </button>
                     {activeDropdown === item.name && <div className="pl-4 mt-2 border-l border-gray-600">
-                        {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block py-2 text-white hover:text-[#F5A623]" onClick={() => setIsOpen(false)}>
+                        {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block py-2 text-white hover:text-[#00C65E]" onClick={() => setIsOpen(false)}>
                             {dropdownItem.name}
                           </Link>)}
                       </div>}
-                  </> : <Link to={item.path} className={`block text-white hover:text-[#F5A623] py-2 ${isActive(item.path) ? "border-l-[3px] border-[#F5A623] pl-2" : ""}`} onClick={() => setIsOpen(false)}>
+                  </> : <Link to={item.path} className={`block text-white hover:text-[#00C65E] py-2 ${isActive(item.path) ? "border-l-[3px] border-[#00C65E] pl-2" : ""}`} onClick={() => setIsOpen(false)}>
                     {item.name}
                   </Link>}
               </div>)}
             <div className="mt-6">
-              <Button asChild className="w-full bg-[#F5A623] hover:bg-[#E09000] text-white font-semibold rounded-lg">
+              <Button asChild className="w-full bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold rounded-lg transition-all hover:scale-[1.02]">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Request a Consultation
                 </Link>
