@@ -59,12 +59,12 @@ const Technology = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image10.jpg" 
-                alt="Flexible power integration diagram for EV charging" 
+                src="/lovable-uploads/9254dc07-f6e6-452b-8fab-bf4ea76d6aa8.png" 
+                alt="Solar-powered EV charging station with battery storage" 
                 className="rounded-lg shadow-lg w-full border-4 border-white"
               />
               <p className="text-sm text-gray-500 mt-3 text-center font-open">
-                Advanced power management system diagram showing multiple input sources and load distribution
+                Solar-powered EV charging station with integrated battery storage and grid connectivity
               </p>
             </div>
           </div>
