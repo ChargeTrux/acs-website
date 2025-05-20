@@ -41,19 +41,19 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 font-montserrat">Contact Information</h3>
             <ul className="space-y-4 font-open">
               <li className="flex items-center">
-                <Mail className="mr-2 text-[#00C65E]" size={18} />
+                <Mail className="mr-2 text-[#0075FF]" size={18} />
                 <a href="mailto:info@advancedchargingsystems.com" className="text-gray-300 hover:text-white transition-colors">
                   info@advancedchargingsystems.com
                 </a>
               </li>
               <li className="flex items-center">
-                <Linkedin className="mr-2 text-[#00C65E]" size={18} />
+                <Linkedin className="mr-2 text-[#0075FF]" size={18} />
                 <a href="https://linkedin.com/company/advanced-charging-systems" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                   LinkedIn
                 </a>
               </li>
               <li className="flex items-start">
-                <MapPin className="mr-2 text-[#00C65E] mt-1" size={18} />
+                <MapPin className="mr-2 text-[#0075FF] mt-1" size={18} />
                 <span className="text-gray-300">
                   Serving major metropolitan areas across the West Coast, Gulf Coast & Southwest, and East Coast & Southeast regions
                 </span>

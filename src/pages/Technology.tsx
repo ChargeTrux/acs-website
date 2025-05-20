@@ -46,7 +46,7 @@ const Technology = () => {
                   "Vehicle-to-Grid (V2G) Capability"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start p-3 bg-white rounded-lg shadow-sm">
-                    <Zap className="mr-3 text-[#2E5090]" size={22} />
+                    <Zap className="mr-3 text-[#00C65E]" size={22} />
                     <span className="text-gray-700 font-open">{item}</span>
                   </li>
                 ))}
@@ -73,7 +73,7 @@ const Technology = () => {
             <h3 className="text-2xl font-semibold mb-4 font-montserrat">Technical Specifications</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="text-lg font-semibold mb-3 font-montserrat text-[#2E5090]">Power Management</h4>
+                <h4 className="text-lg font-semibold mb-3 font-montserrat text-[#00C65E]">Power Management</h4>
                 <ul className="space-y-2">
                   {[
                     "Dynamic load balancing up to 500kW",
@@ -82,14 +82,14 @@ const Technology = () => {
                     "Real-time power quality monitoring"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="mr-2 text-[#388F72] mt-1" size={16} />
+                      <Check className="mr-2 text-[#0075FF] mt-1" size={16} />
                       <span className="text-gray-600 font-open">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold mb-3 font-montserrat text-[#2E5090]">System Compatibility</h4>
+                <h4 className="text-lg font-semibold mb-3 font-montserrat text-[#00C65E]">System Compatibility</h4>
                 <ul className="space-y-2">
                   {[
                     "All major EVSE protocols (OCPP 1.6/2.0)",
@@ -98,7 +98,7 @@ const Technology = () => {
                     "Building management system connectivity"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="mr-2 text-[#388F72] mt-1" size={16} />
+                      <Check className="mr-2 text-[#0075FF] mt-1" size={16} />
                       <span className="text-gray-600 font-open">{item}</span>
                     </li>
                   ))}
@@ -140,7 +140,7 @@ const Technology = () => {
                     "Reinforced design for all-weather operation"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="mr-2 text-[#2E5090] mt-1" size={18} />
+                      <Check className="mr-2 text-[#00C65E] mt-1" size={18} />
                       <span className="text-gray-600 font-open">{item}</span>
                     </li>
                   ))}
@@ -151,19 +151,19 @@ const Technology = () => {
                   <h3 className="text-xl font-semibold mb-4 text-center font-montserrat">Results</h3>
                   <div className="space-y-6">
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-[#388F72]">75%</p>
+                      <p className="text-3xl font-bold text-[#0075FF]">75%</p>
                       <p className="text-gray-600 font-open">Reduction in Fossil Fuel Use</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-[#388F72]">4 Hours</p>
+                      <p className="text-3xl font-bold text-[#0075FF]">4 Hours</p>
                       <p className="text-gray-600 font-open">Deployment Time</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-[#388F72]">$50,000</p>
+                      <p className="text-3xl font-bold text-[#0075FF]">$50,000</p>
                       <p className="text-gray-600 font-open">Annual Operating Cost Savings</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-[#388F72]">99.2%</p>
+                      <p className="text-3xl font-bold text-[#0075FF]">99.2%</p>
                       <p className="text-gray-600 font-open">System Reliability</p>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ const Technology = () => {
           <div className="text-center">
             <Button 
               asChild
-              className="bg-[#388F72] hover:bg-[#2A7A62] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all"
+              className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all"
             >
               <Link to="/contact" className="flex items-center justify-center">
                 Discuss Your Custom Solution
