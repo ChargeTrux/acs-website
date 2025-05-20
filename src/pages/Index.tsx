@@ -5,11 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { Check, ChevronRight, MapPin, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 const Index = () => {
   useEffect(() => {
@@ -37,31 +32,11 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
-  const heroImages = [
-    "/lovable-uploads/27c461ed-71df-454a-b789-8fef857a27a9.png",
-    "/lovable-uploads/7a062f28-6410-46f7-a03e-eb9f53192b5f.png",
-    "/lovable-uploads/3d58b006-a654-4b6d-9c4f-5d3010656152.png",
-    "/lovable-uploads/c88b7198-9598-4b9f-8c8e-78165c31e52c.png",
-    "/lovable-uploads/114e0924-650b-468f-9164-c43d0c1d74b0.png",
-    "/lovable-uploads/c67dd636-cec0-434a-a1a1-66060db3a055.png"
-  ];
-
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Now with smaller height and image carousel */}
-      <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center bg-[#0A1A2F]">
-        <Carousel className="w-full h-full absolute inset-0" autoplay={true} autoplayInterval={5000}>
-          <CarouselContent className="h-full">
-            {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="h-full">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-40" 
-                  style={{ backgroundImage: `url(${image})` }}
-                ></div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+      {/* Hero Section */}
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center bg-[#0A1A2F]">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/27c461ed-71df-454a-b789-8fef857a27a9.png')] bg-cover bg-center opacity-40"></div>
         <div className="container relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
             Connecting Power to Possibility
