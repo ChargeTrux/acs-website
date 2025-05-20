@@ -95,7 +95,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo - updated size to match screenshot */}
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" alt="Advanced Charging Systems Logo" className="h-12" />
+            <img src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" alt="Advanced Charging Systems Logo" className="h-12 object-fill" />
           </Link>
 
           {/* Desktop Navigation */}
