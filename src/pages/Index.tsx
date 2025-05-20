@@ -2,13 +2,54 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Check, ChevronRight, MapPin, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  // Hero images array
+  const heroImages = [
+    "/lovable-uploads/81c3d435-3dfe-4e97-8450-f82b3e1a37e3.png",
+    "/lovable-uploads/a35b0c28-37ef-4dec-817a-7d5718df7610.png",
+    "/lovable-uploads/d3bd7961-f652-47fe-97d8-7a5d8a108600.png",
+    "/lovable-uploads/141c6511-2c68-4371-9970-2eb20f49df9c.png",
+  ];
+
   useEffect(() => {
-    // Simple scroll animation for elements
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  // Auto-advance the carousel
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [api]);
+
+  // Simple scroll animation for elements
+  useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
@@ -34,9 +75,43 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - with adjusted background position */}
+      {/* Hero Section - with Carousel */}
       <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center bg-[#0A1A2F]">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/27c461ed-71df-454a-b789-8fef857a27a9.png')] bg-cover bg-center bg-no-repeat opacity-40"></div>
+        <Carousel
+          setApi={setApi}
+          className="w-full h-full absolute inset-0"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="h-full">
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index} className="h-full">
+                <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 transition-opacity duration-1000 ease-in-out" 
+                    style={{ backgroundImage: `url(${image})` }} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          
+          <CarouselPrevious className="absolute left-4 z-30 bg-[#0075FF]/80 hover:bg-[#0075FF] text-white border-none" />
+          <CarouselNext className="absolute right-4 z-30 bg-[#0075FF]/80 hover:bg-[#0075FF] text-white border-none" />
+          
+          {/* Slide indicators */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
+            {Array.from({ length: count }).map((_, i) => (
+              <button
+                key={i}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === current ? "bg-white w-4" : "bg-white/50"
+                }`}
+                onClick={() => api?.scrollTo(i)}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </Carousel>
+        
         <div className="container relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
             Connecting Power to Possibility

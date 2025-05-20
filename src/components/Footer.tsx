@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="/lovable-uploads/28de2e79-a9cd-4de2-85d9-fd576c0ccbee.png" 
+                src="/lovable-uploads/0123177a-d92d-43da-9086-fefb9a3c6dce.png" 
                 alt="Advanced Charging Systems Logo" 
                 className="h-20" 
               />
