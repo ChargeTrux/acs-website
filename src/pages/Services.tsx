@@ -1,66 +1,97 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, ChevronRight, Clock, Zap } from "lucide-react";
+import { Check, ChevronRight, Clock, Zap, Settings, FileText, Tool } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Services = () => {
+  // Scroll to section based on hash in URL
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: element.offsetTop - 100,
+            behavior: "smooth"
+          });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Page Header */}
-      <section className="relative py-16 bg-[#1E2838]">
+      <section className="relative py-16 bg-[#0A1A2F]">
         <div className="container px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat">
             Our Services
           </h1>
           <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-open">
-            Advanced Charging Systems and Integration delivers comprehensive end-to-end EV charging solutions 
-            tailored to your specific business needs and technical requirements.
+            Advanced Charging Systems provides comprehensive EV charging infrastructure services 
+            from initial concept through final commissioning. Our technology-agnostic approach 
+            ensures you get the best solution for your specific needs.
           </p>
         </div>
       </section>
 
       {/* Infrastructure Design & Engineering */}
-      <section className="py-20 bg-white">
+      <section id="infrastructure" className="py-20 bg-white">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row items-center gap-10">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat">Infrastructure Design & Engineering</h2>
-              <p className="text-gray-600 mb-4 font-open">
-                Our design and engineering team specializes in creating optimal charging infrastructure plans that 
-                maximize efficiency while minimizing costs. We provide comprehensive electrical designs that account 
-                for present needs and future scaling requirements.
+            <div className="lg:w-3/5">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat text-[#333333]">Infrastructure Design & Engineering</h2>
+              <p className="text-gray-700 mb-6 font-open text-lg">
+                Our engineering team specializes in creating efficient, future-proof electrical 
+                infrastructure designs that optimize your charging deployment while minimizing costs.
               </p>
               
-              <h3 className="text-xl font-semibold mt-6 mb-3 font-montserrat">Our approach includes:</h3>
-              <ul className="space-y-2 mb-8">
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Key Services</h3>
+              <ul className="space-y-3 mb-8">
                 {[
-                  "Site assessments and electrical capacity evaluations",
-                  "Custom electrical design for optimal power distribution",
-                  "Load management system design and configuration",
-                  "Future-proof infrastructure planning",
-                  "Detailed technical specifications and schematics"
+                  "Switchgear and panel upgrades",
+                  "Trenching, conduit, and transformer sizing",
+                  "Site layout and single-line electrical diagrams",
+                  "Permitting and utility interface"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="mr-2 text-[#388F72] mt-1" size={18} />
-                    <span className="text-gray-600 font-open">{item}</span>
+                    <span className="mr-2 text-[#0075FF] font-bold text-lg">•</span>
+                    <span className="text-gray-700 font-open">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Benefits</h3>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Reduced implementation costs",
+                  "Optimized power delivery",
+                  "Future-proof expandability",
+                  "Code-compliant installations"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="mr-2 text-[#00C65E] mt-1" size={20} />
+                    <span className="text-gray-700 font-open">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <Button 
                 asChild
-                className="bg-[#388F72] hover:bg-[#2A7A62] text-white font-semibold px-6 py-2 rounded-lg transition-all"
+                className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-6 py-2 rounded-lg transition-all transform hover:scale-102 mt-4"
               >
                 <Link to="/contact" className="flex items-center">
-                  Request Infrastructure Consultation
+                  Discuss Your Project
                   <ChevronRight className="ml-2" size={18} />
                 </Link>
               </Button>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-2/5">
               <img 
-                src="/image2.jpg" 
+                src="/lovable-uploads/3a97560e-9856-4815-9e1a-c4e96eb07721.png" 
                 alt="Infrastructure design and engineering for EV charging" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -70,45 +101,58 @@ const Services = () => {
       </section>
 
       {/* Charging System Integration */}
-      <section className="py-20 bg-[#DEDEDE]">
+      <section id="integration" className="py-20 bg-[#F4F7FA]">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat">Charging System Integration</h2>
-              <p className="text-gray-600 mb-4 font-open">
-                We specialize in seamless integration of charging hardware, software, and power management systems to create 
-                a cohesive charging solution that delivers reliable performance and user-friendly operation.
+            <div className="lg:w-3/5">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat text-[#333333]">Charging System Integration</h2>
+              <p className="text-gray-700 mb-6 font-open text-lg">
+                We integrate charging hardware, power sources, and management systems into cohesive 
+                solutions that work flawlessly together.
               </p>
               
-              <h3 className="text-xl font-semibold mt-6 mb-3 font-montserrat">Integration services include:</h3>
-              <ul className="space-y-2 mb-8">
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Key Services</h3>
+              <ul className="space-y-3 mb-8">
                 {[
-                  "Hardware selection and implementation based on specific needs",
-                  "Software configuration and network connectivity setup",
-                  "Payment system integration and testing",
-                  "Power management system implementation",
-                  "User interface customization and branding"
+                  "Design and deployment of DCFC and Level 2 systems",
+                  "Technology-agnostic integration of chargers, BESS, inverters, and EMS",
+                  "Stationary and off-grid mobile charging solutions"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="mr-2 text-[#388F72] mt-1" size={18} />
-                    <span className="text-gray-600 font-open">{item}</span>
+                    <span className="mr-2 text-[#0075FF] font-bold text-lg">•</span>
+                    <span className="text-gray-700 font-open">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Benefits</h3>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Vendor-agnostic recommendations",
+                  "Optimized system performance",
+                  "Flexible power options",
+                  "Turnkey implementation"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="mr-2 text-[#00C65E] mt-1" size={20} />
+                    <span className="text-gray-700 font-open">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <Button 
                 asChild
-                className="bg-[#388F72] hover:bg-[#2A7A62] text-white font-semibold px-6 py-2 rounded-lg transition-all"
+                className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-6 py-2 rounded-lg transition-all transform hover:scale-102 mt-4"
               >
                 <Link to="/contact" className="flex items-center">
-                  Discuss Integration Needs
+                  Explore Solutions
                   <ChevronRight className="ml-2" size={18} />
                 </Link>
               </Button>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-2/5">
               <img 
-                src="/image3.jpg" 
+                src="/lovable-uploads/393e2835-59cc-41b2-866e-0468cb039bb9.png" 
                 alt="Charging system integration services" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -118,45 +162,58 @@ const Services = () => {
       </section>
 
       {/* Contractor & Vendor Oversight */}
-      <section className="py-20 bg-white">
+      <section id="contractor" className="py-20 bg-white">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row items-center gap-10">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat">Contractor & Vendor Oversight</h2>
-              <p className="text-gray-600 mb-4 font-open">
-                Our project management team coordinates all aspects of installation and maintenance, ensuring quality 
-                workmanship and adherence to project specifications, timelines, and budgets.
+            <div className="lg:w-3/5">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat text-[#333333]">Contractor & Vendor Oversight</h2>
+              <p className="text-gray-700 mb-6 font-open text-lg">
+                Let ACS manage the complex web of contractors, vendors, and logistics to ensure 
+                your charging project stays on schedule and on budget.
               </p>
               
-              <h3 className="text-xl font-semibold mt-6 mb-3 font-montserrat">Our oversight includes:</h3>
-              <ul className="space-y-2 mb-8">
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Key Services</h3>
+              <ul className="space-y-3 mb-8">
                 {[
-                  "Contractor selection and qualification",
-                  "Installation quality assurance and inspection",
-                  "Vendor coordination and deliverable management",
-                  "Schedule management and milestone tracking",
-                  "Budget oversight and cost control"
+                  "Management of 3rd-party electricians, contractors, and civil trades",
+                  "Procurement support for battery packs, chargers, and mounting systems",
+                  "Coordination across delivery schedules, incentives, and commissioning"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="mr-2 text-[#388F72] mt-1" size={18} />
-                    <span className="text-gray-600 font-open">{item}</span>
+                    <span className="mr-2 text-[#0075FF] font-bold text-lg">•</span>
+                    <span className="text-gray-700 font-open">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Benefits</h3>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Single point of contact",
+                  "Reduced project complexity",
+                  "Vendor accountability",
+                  "Streamlined communications"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="mr-2 text-[#00C65E] mt-1" size={20} />
+                    <span className="text-gray-700 font-open">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <Button 
                 asChild
-                className="bg-[#388F72] hover:bg-[#2A7A62] text-white font-semibold px-6 py-2 rounded-lg transition-all"
+                className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-6 py-2 rounded-lg transition-all transform hover:scale-102 mt-4"
               >
                 <Link to="/contact" className="flex items-center">
-                  Learn About Project Management
+                  Simplify Your Project
                   <ChevronRight className="ml-2" size={18} />
                 </Link>
               </Button>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-2/5">
               <img 
-                src="/image4.jpg" 
+                src="/lovable-uploads/2511b416-fe8c-41ea-b083-db8cf5daf481.png" 
                 alt="Contractor and vendor oversight for EV charging projects" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -166,45 +223,58 @@ const Services = () => {
       </section>
 
       {/* Utility & Compliance Management */}
-      <section className="py-20 bg-[#DEDEDE]">
+      <section id="compliance" className="py-20 bg-[#F4F7FA]">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat">Utility & Compliance Management</h2>
-              <p className="text-gray-600 mb-4 font-open">
-                We handle all aspects of utility coordination, permitting, and regulatory compliance to ensure your 
-                charging infrastructure meets all legal requirements and operates within applicable regulations.
+            <div className="lg:w-3/5">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat text-[#333333]">Utility & Compliance Management</h2>
+              <p className="text-gray-700 mb-6 font-open text-lg">
+                Navigate the complex landscape of utility requirements, permits, and incentive 
+                programs with our experienced compliance team.
               </p>
               
-              <h3 className="text-xl font-semibold mt-6 mb-3 font-montserrat">Compliance services include:</h3>
-              <ul className="space-y-2 mb-8">
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Key Services</h3>
+              <ul className="space-y-3 mb-8">
                 {[
-                  "Utility coordination and service applications",
-                  "Permit acquisition and inspection scheduling",
-                  "Regulatory compliance documentation",
-                  "Incentive and rebate application assistance",
-                  "Ongoing compliance monitoring and reporting"
+                  "Load calculations and utility applications",
+                  "Permitting and service panel approvals",
+                  "NEVI, LCFS, and state/federal funding alignment"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="mr-2 text-[#388F72] mt-1" size={18} />
-                    <span className="text-gray-600 font-open">{item}</span>
+                    <span className="mr-2 text-[#0075FF] font-bold text-lg">•</span>
+                    <span className="text-gray-700 font-open">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <h3 className="text-xl font-semibold mt-8 mb-4 font-montserrat text-[#333333]">Benefits</h3>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Maximized incentives",
+                  "Accelerated approvals",
+                  "Reduced paperwork burden",
+                  "Regulatory confidence"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="mr-2 text-[#00C65E] mt-1" size={20} />
+                    <span className="text-gray-700 font-open">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <Button 
                 asChild
-                className="bg-[#388F72] hover:bg-[#2A7A62] text-white font-semibold px-6 py-2 rounded-lg transition-all"
+                className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-6 py-2 rounded-lg transition-all transform hover:scale-102 mt-4"
               >
                 <Link to="/contact" className="flex items-center">
-                  Discuss Compliance Requirements
+                  Ensure Compliance
                   <ChevronRight className="ml-2" size={18} />
                 </Link>
               </Button>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-2/5">
               <img 
-                src="/image5.jpg" 
+                src="/lovable-uploads/5387b306-1722-405a-b522-1b9477c93dd5.png" 
                 alt="Utility and compliance management for EV charging" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -216,12 +286,12 @@ const Services = () => {
       {/* Process Timeline */}
       <section className="py-20 bg-white">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center font-montserrat">
-            Our Project Process
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center font-montserrat text-[#333333]">
+            Our Implementation Process
           </h2>
           
           <div className="relative">
-            {/* Timeline line */}
+            {/* Timeline line - visible only on md and larger screens */}
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-[#DEDEDE] -translate-y-1/2 z-0"></div>
             
             {/* Timeline steps */}
@@ -229,40 +299,49 @@ const Services = () => {
               {[
                 {
                   step: 1,
-                  title: "Consultation",
-                  description: "Initial discussion about project goals, site requirements, and technical needs."
+                  title: "Site Assessment & Requirements",
+                  icon: <Settings className="mb-2" />,
+                  description: "Comprehensive evaluation of your site's electrical capacity and needs."
                 },
                 {
                   step: 2,
-                  title: "Assessment",
-                  description: "Detailed site evaluation and electrical capacity analysis."
+                  title: "System Design & Engineering",
+                  icon: <FileText className="mb-2" />,
+                  description: "Creation of detailed plans and specifications tailored to your requirements."
                 },
                 {
                   step: 3,
-                  title: "Design",
-                  description: "Creation of custom charging infrastructure plans and specifications."
+                  title: "Permitting & Procurement",
+                  icon: <FileText className="mb-2" />,
+                  description: "Management of all required permits and equipment ordering."
                 },
                 {
                   step: 4,
-                  title: "Permitting",
-                  description: "Management of all regulatory approvals and utility coordination."
+                  title: "Installation & Integration",
+                  icon: <Tool className="mb-2" />,
+                  description: "Professional installation and system integration by certified experts."
                 },
                 {
                   step: 5,
-                  title: "Installation",
-                  description: "Coordinated implementation with quality assurance oversight."
+                  title: "Testing & Commissioning",
+                  icon: <Zap className="mb-2" />,
+                  description: "Thorough verification of all components and operational testing."
                 },
                 {
                   step: 6,
-                  title: "Activation",
-                  description: "System testing, commissioning, and handover to operations."
+                  title: "Ongoing Support",
+                  icon: <Clock className="mb-2" />,
+                  description: "Continuous monitoring and support to ensure optimal performance."
                 }
               ].map((step, index) => (
-                <div key={index} className="relative z-10 flex flex-col items-center">
-                  <div className="bg-[#2E5090] text-white w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg">
+                <div key={index} className="relative z-10 flex flex-col items-center animate-fade-in">
+                  <div className="bg-[#0075FF] text-white w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-lg">
                     <span className="text-lg font-semibold">{step.step}</span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-center font-montserrat">{step.title}</h3>
+                  <div className="text-[#0075FF] mb-2">
+                    {step.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-center font-montserrat text-[#333333]">{step.title}</h3>
                   <p className="text-gray-600 text-center font-open">{step.description}</p>
                 </div>
               ))}
@@ -272,7 +351,7 @@ const Services = () => {
           <div className="flex justify-center mt-16">
             <Button 
               asChild
-              className="bg-[#388F72] hover:bg-[#2A7A62] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all"
+              className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all transform hover:scale-102"
             >
               <Link to="/contact" className="flex items-center">
                 Start Your Project
