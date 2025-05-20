@@ -34,8 +34,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center bg-[#0A1A2F]">
+      {/* Hero Section - with reduced height */}
+      <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center bg-[#0A1A2F]">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/27c461ed-71df-454a-b789-8fef857a27a9.png')] bg-cover bg-center opacity-40"></div>
         <div className="container relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
