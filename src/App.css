@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -13,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #76B947aa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #76B947aa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
@@ -40,53 +39,4 @@
 
 .read-the-docs {
   color: #888;
-}
-
-/* Custom Brand Colors */
-.bg-brand-dark-green {
-  background-color: #1D741B;
-}
-
-.bg-brand-light-green {
-  background-color: #76B947;
-}
-
-.bg-brand-light-bg {
-  background-color: #F4F7FA;
-}
-
-.bg-brand-card-green {
-  background-color: #DDFFE7;
-}
-
-.text-brand-light-green {
-  color: #76B947;
-}
-
-.text-brand-dark-green {
-  color: #1D741B;
-}
-
-.text-brand-blue {
-  color: #0000FF;
-}
-
-.text-brand-dark-text {
-  color: #333333;
-}
-
-.text-brand-light-text {
-  color: #FFFFFF;
-}
-
-.border-brand-light-green {
-  border-color: #76B947;
-}
-
-.hover\:bg-brand-light-green:hover {
-  background-color: #76B947;
-}
-
-.hover\:text-brand-light-green:hover {
-  color: #76B947;
 }

@@ -98,10 +98,10 @@ const Navbar = () => {
     }
   };
   
-  return <nav className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-md" : "bg-brand-dark-green"}`}>
+  return <nav className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - increased size by 4x */}
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/206ce4f6-35bb-4d83-b3f6-bf6ca3fbca59.png" 
@@ -113,14 +113,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map(item => <div key={item.name} className="relative group">
-                <Link to={item.path} className={`${scrolled ? "text-brand-dark-text hover:text-brand-light-green" : "text-brand-light-text hover:text-brand-light-green"} font-medium transition-colors ${isActive(item.path) ? "border-b-[3px] border-brand-light-green" : ""}`}>
+                <Link to={item.path} className={`${scrolled ? "text-[#0A1A2F] hover:text-[#0075FF]" : "text-white hover:text-[#00C65E]"} font-medium transition-colors ${isActive(item.path) ? "border-b-[3px] border-[#00C65E]" : ""}`}>
                   {item.name}
                 </Link>
                 
                 {/* Dropdown for desktop */}
                 {item.dropdown && <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     <div className="py-2">
-                      {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block px-4 py-3 text-brand-dark-text hover:bg-brand-light-green hover:text-brand-light-text transition-colors">
+                      {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block px-4 py-3 text-gray-800 hover:bg-[#0075FF] hover:text-white transition-colors">
                           {dropdownItem.name}
                         </Link>)}
                     </div>
@@ -129,13 +129,13 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <Button asChild className="hidden md:block bg-brand-light-green hover:bg-brand-light-green/80 text-white font-semibold rounded-lg transition-all hover:scale-[1.02]">
+          <Button asChild className="hidden md:block bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold rounded-lg transition-all hover:scale-[1.02]">
             <Link to="/contact">Request a Consultation</Link>
           </Button>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} className={`p-2 ${scrolled ? "text-brand-dark-text" : "text-brand-light-text"}`}>
+            <button onClick={toggleMenu} className={`p-2 ${scrolled ? "text-[#0A1A2F]" : "text-white"}`}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -143,25 +143,25 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && <div className="md:hidden bg-brand-dark-green border-t border-gray-700">
+      {isOpen && <div className="md:hidden bg-[#0A1A2F] border-t border-gray-700">
           <div className="container px-4 py-4">
             {navItems.map(item => <div key={item.name} className="py-2">
                 {item.dropdown ? <>
-                    <button onClick={() => handleDropdownToggle(item.name)} className={`flex items-center justify-between w-full text-left text-brand-light-text py-2 ${isActive(item.path) ? "border-l-[3px] border-brand-light-green pl-2" : ""}`}>
+                    <button onClick={() => handleDropdownToggle(item.name)} className={`flex items-center justify-between w-full text-left text-white py-2 ${isActive(item.path) ? "border-l-[3px] border-[#00C65E] pl-2" : ""}`}>
                       <span>{item.name}</span>
                       <span>{activeDropdown === item.name ? "-" : "+"}</span>
                     </button>
                     {activeDropdown === item.name && <div className="pl-4 mt-2 border-l border-gray-600">
-                        {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block py-2 text-brand-light-text hover:text-brand-light-green" onClick={() => setIsOpen(false)}>
+                        {item.dropdown.map(dropdownItem => <Link key={dropdownItem.name} to={dropdownItem.path} className="block py-2 text-white hover:text-[#00C65E]" onClick={() => setIsOpen(false)}>
                             {dropdownItem.name}
                           </Link>)}
                       </div>}
-                  </> : <Link to={item.path} className={`block text-brand-light-text hover:text-brand-light-green py-2 ${isActive(item.path) ? "border-l-[3px] border-brand-light-green pl-2" : ""}`} onClick={() => setIsOpen(false)}>
+                  </> : <Link to={item.path} className={`block text-white hover:text-[#00C65E] py-2 ${isActive(item.path) ? "border-l-[3px] border-[#00C65E] pl-2" : ""}`} onClick={() => setIsOpen(false)}>
                     {item.name}
                   </Link>}
               </div>)}
             <div className="mt-6">
-              <Button asChild className="w-full bg-brand-light-green hover:bg-brand-light-green/80 text-brand-light-text font-semibold rounded-lg transition-all hover:scale-[1.02]">
+              <Button asChild className="w-full bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold rounded-lg transition-all hover:scale-[1.02]">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Request a Consultation
                 </Link>
