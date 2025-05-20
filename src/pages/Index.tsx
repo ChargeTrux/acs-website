@@ -36,7 +36,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section - with reduced height */}
       <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center bg-[#0A1A2F]">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/09985754-ac73-45e1-adae-5e811e47ba64.png')] bg-cover bg-center opacity-40 bg-[length:100%_auto]"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/09985754-ac73-45e1-adae-5e811e47ba64.png')] bg-contain bg-center opacity-40 bg-no-repeat"></div>
         <div className="container relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
             Connecting Power to Possibility
