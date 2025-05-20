@@ -17,6 +17,7 @@ const HeroSection = () => {
 
   // Update hero images array with the newly uploaded images
   const heroImages = [
+    "/lovable-uploads/f44323b2-008b-4dd8-b2c3-ec8b8421970b.png", // Add the new image first
     "/lovable-uploads/20cd42fc-a182-47ca-880a-cb52a88130fd.png",
     "/lovable-uploads/03d38454-e1de-437b-9182-5a42078c2c70.png",
     "/lovable-uploads/4bc6edba-cb37-4d73-823d-37c5a9def376.png",
@@ -55,7 +56,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center bg-[#0A1A2F]">
+    <section className="relative h-[80vh] min-h-[700px] flex items-center justify-center bg-[#0A1A2F]">
       <Carousel
         setApi={setApi}
         className="w-full h-full absolute inset-0"
@@ -71,7 +72,7 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full" 
                 style={{ 
                   backgroundImage: `url(${image})`,
-                  opacity: 0.9
+                  opacity: 1
                 }} 
               />
             </CarouselItem>
