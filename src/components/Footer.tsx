@@ -2,10 +2,29 @@
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Linkedin, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
     <footer className="bg-[#0A1A2F] text-white">
+      {/* Help Section Banner */}
+      <div className="bg-[#001429] py-6 bg-cover bg-center" style={{ backgroundImage: `url(/lovable-uploads/57e1de19-cab4-4b7a-b143-a82f24163932.png)` }}>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-white text-xl font-medium mb-4 md:mb-0">
+              Planning to deploy EVs in other locations? Let us know—we're expanding rapidly!
+            </p>
+            <Button 
+              asChild
+              className="bg-[#0075FF] hover:bg-[#0066DD] text-white font-semibold px-6 py-2 rounded-lg transition-all"
+            >
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1 - Logo and Description */}
