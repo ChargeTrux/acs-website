@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, ChevronRight, Clock, Zap, Settings, FileText, Tool } from "lucide-react";
+import { Check, ChevronRight, Clock, Zap, Settings, FileText, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -318,7 +317,7 @@ const Services = () => {
                 {
                   step: 4,
                   title: "Installation & Integration",
-                  icon: <Tool className="mb-2" />,
+                  icon: <Wrench className="mb-2" />,
                   description: "Professional installation and system integration by certified experts."
                 },
                 {
