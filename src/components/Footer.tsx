@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" 
                 alt="Advanced Charging Systems Logo" 
-                className="h-64" 
+                className="h-20" 
               />
             </div>
             <h3 className="text-xl font-semibold mb-2 font-montserrat text-white">Connecting Power to Possibility</h3>
