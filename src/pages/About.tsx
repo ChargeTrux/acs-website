@@ -66,7 +66,7 @@ const About = () => {
                 long-term market strategy.
               </p>
               
-              <div className="bg-[#0075FF] p-6 rounded-lg text-white mb-6">
+              <div className="bg-[#00C65E] p-6 rounded-lg text-white mb-6">
                 <h3 className="text-xl font-bold mb-3 font-montserrat">Our Mission</h3>
                 <p className="font-open">
                   To accelerate the electrification of transportation by removing technical barriers 
@@ -76,8 +76,8 @@ const About = () => {
             </div>
             <div className="lg:w-2/5 animate-on-scroll">
               <img 
-                src="/company-team.jpg" 
-                alt="Advanced Charging Systems team of experts" 
+                src="/lovable-uploads/d0f58a70-a0b9-45b4-8e45-2fbef27d4e97.png" 
+                alt="Advanced Charging Systems charging infrastructure" 
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
@@ -97,7 +97,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#00C65E] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Settings size={28} />
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#00C65E] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Zap size={28} />
                   </div>
                 </div>
@@ -127,7 +127,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#00C65E] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Shield size={28} />
                   </div>
                 </div>
@@ -142,7 +142,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#00C65E] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Scale size={28} />
                   </div>
                 </div>
@@ -157,7 +157,7 @@ const About = () => {
           <div className="text-center animate-on-scroll">
             <Button 
               asChild
-              className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]"
+              className="bg-[#00C65E] hover:bg-[#00A04B] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]"
             >
               <Link to="/contact" className="flex items-center justify-center">
                 Start a Conversation
@@ -183,7 +183,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#2E5090] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Zap size={28} />
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#2E5090] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Users size={28} />
                   </div>
                 </div>
@@ -215,7 +215,7 @@ const About = () => {
             <Card className="bg-white shadow-md hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-[#2E5090] text-white">
+                  <div className="p-3 rounded-full bg-[#0075FF] text-white">
                     <Star size={28} />
                   </div>
                 </div>
@@ -236,7 +236,7 @@ const About = () => {
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 animate-on-scroll">
               <img 
-                src="/partnership.jpg" 
+                src="/lovable-uploads/bd4e8952-f62b-498b-b1e7-00fc51176c1f.png" 
                 alt="ACS partnership approach" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -253,26 +253,26 @@ const About = () => {
               
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
-                  <CheckCircle className="text-[#00C65E] mr-2 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle className="text-[#0075FF] mr-2 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600 font-open">Transparent communication throughout the project lifecycle</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-[#00C65E] mr-2 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle className="text-[#0075FF] mr-2 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600 font-open">Regular progress updates and milestone reviews</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-[#00C65E] mr-2 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle className="text-[#0075FF] mr-2 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600 font-open">Collaborative problem-solving when challenges arise</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-[#00C65E] mr-2 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle className="text-[#0075FF] mr-2 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600 font-open">Knowledge transfer to ensure your team can maintain operations</span>
                 </li>
               </ul>
               
               <Button 
                 asChild
-                className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]"
+                className="bg-[#00C65E] hover:bg-[#00A04B] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]"
               >
                 <Link to="/contact">
                   Request a Consultation
@@ -284,7 +284,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#0075FF]">
+      <section className="py-16 bg-[#00C65E]">
         <div className="container px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white font-montserrat animate-on-scroll">
             Ready to Transform Your EV Charging Infrastructure?
@@ -295,7 +295,7 @@ const About = () => {
           </p>
           <Button 
             asChild
-            className="bg-white hover:bg-gray-100 text-[#0075FF] font-semibold px-8 py-3 rounded-lg text-lg transition-all hover:scale-[1.02] animate-on-scroll"
+            className="bg-white hover:bg-gray-100 text-[#00C65E] font-semibold px-8 py-3 rounded-lg text-lg transition-all hover:scale-[1.02] animate-on-scroll"
           >
             <Link to="/contact">
               Request a Consultation
