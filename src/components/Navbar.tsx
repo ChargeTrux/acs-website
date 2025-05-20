@@ -82,13 +82,13 @@ const Navbar = () => {
       scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"
     }`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-16">
+          {/* Logo - updated size to match screenshot */}
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" 
               alt="Advanced Charging Systems Logo" 
-              className="h-16" 
+              className="h-8" 
             />
           </Link>
 
