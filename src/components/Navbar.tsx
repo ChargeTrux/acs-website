@@ -64,7 +64,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/0123177a-d92d-43da-9086-fefb9a3c6dce.png" 
               alt="Advanced Charging Systems Logo" 
-              className="h-16" 
+              className="h-20" 
             />
           </Link>
 

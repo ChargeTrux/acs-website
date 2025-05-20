@@ -24,6 +24,7 @@ const Index = () => {
     "/lovable-uploads/a35b0c28-37ef-4dec-817a-7d5718df7610.png",
     "/lovable-uploads/d3bd7961-f652-47fe-97d8-7a5d8a108600.png",
     "/lovable-uploads/141c6511-2c68-4371-9970-2eb20f49df9c.png",
+    "/lovable-uploads/8b95c223-711b-460e-89c2-933e0bcfa9d0.png",
   ];
 
   useEffect(() => {
@@ -76,7 +77,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - with Carousel */}
-      <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center bg-[#0A1A2F]">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-[#0A1A2F]">
         <Carousel
           setApi={setApi}
           className="w-full h-full absolute inset-0"
@@ -88,8 +89,13 @@ const Index = () => {
           <CarouselContent className="h-full">
             {heroImages.map((image, index) => (
               <CarouselItem key={index} className="h-full">
-                <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 transition-opacity duration-1000 ease-in-out" 
-                    style={{ backgroundImage: `url(${image})` }} />
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full" 
+                  style={{ 
+                    backgroundImage: `url(${image})`,
+                    opacity: 0.6
+                  }} 
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
