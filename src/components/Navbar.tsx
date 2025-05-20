@@ -56,7 +56,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#1E2838] sticky top-0 z-50">
+    <nav className="bg-[#003B73] sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -124,7 +124,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-[#1E2838] border-t border-gray-700">
+        <div className="md:hidden bg-[#003B73] border-t border-gray-700">
           <div className="container px-4 py-4">
             {navItems.map((item) => (
               <div key={item.name} className="py-2">
