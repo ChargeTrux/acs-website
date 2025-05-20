@@ -62,7 +62,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/3f0405ff-4b08-454c-bed9-b1354aa492a7.png" 
+              src="/lovable-uploads/ada052a5-0116-4977-a6e4-b4325cdb0f10.png" 
               alt="Advanced Charging Systems Logo" 
               className="h-14" 
             />
