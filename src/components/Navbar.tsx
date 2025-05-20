@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -106,11 +107,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map(item => <div key={item.name} className="relative group">
-                <Link to={item.path} className={`${scrolled ? "text-[#0A1A2F] hover:text-[#F5A623]" : "text-white hover:text-[#F5A623]"} font-medium transition-colors ${isActive(item.path) ? "border-b-[3px] border-[#F5A623]" : ""}`} onClick={e => {
-              if (item.dropdown && item.dropdown.length > 0) {
-                e.preventDefault();
-              }
-            }}>
+                <Link to={item.path} className={`${scrolled ? "text-[#0A1A2F] hover:text-[#F5A623]" : "text-white hover:text-[#F5A623]"} font-medium transition-colors ${isActive(item.path) ? "border-b-[3px] border-[#F5A623]" : ""}`}>
                   {item.name}
                 </Link>
                 

@@ -21,7 +21,7 @@ const Industries = () => {
       </section>
 
       {/* Fleet & Logistics Hubs */}
-      <section className="py-20 bg-white">
+      <section id="fleet" className="py-20 bg-white">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="lg:w-1/2">
@@ -78,7 +78,7 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image6.jpg" 
+                src="/lovable-uploads/393e2835-59cc-41b2-866e-0468cb039bb9.png" 
                 alt="Fleet and logistics hubs EV charging solutions" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -88,7 +88,7 @@ const Industries = () => {
       </section>
 
       {/* Rental Car Yards */}
-      <section className="py-20 bg-[#DEDEDE]">
+      <section id="rental" className="py-20 bg-[#DEDEDE]">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
             <div className="lg:w-1/2">
@@ -145,7 +145,7 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image7.jpg" 
+                src="/lovable-uploads/3a97560e-9856-4815-9e1a-c4e96eb07721.png" 
                 alt="Rental car yard EV charging solutions" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -155,7 +155,7 @@ const Industries = () => {
       </section>
 
       {/* Commercial Real Estate */}
-      <section className="py-20 bg-white">
+      <section id="commercial" className="py-20 bg-white">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="lg:w-1/2">
@@ -212,7 +212,7 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image8.jpg" 
+                src="/lovable-uploads/2793a0c1-4ab9-4474-bb94-74bf6d812a08.png" 
                 alt="Commercial real estate EV charging solutions" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -222,7 +222,7 @@ const Industries = () => {
       </section>
 
       {/* Utilities & Municipal Projects */}
-      <section className="py-20 bg-[#DEDEDE]">
+      <section id="utilities" className="py-20 bg-[#DEDEDE]">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
             <div className="lg:w-1/2">
@@ -279,7 +279,7 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image-municipal.jpg" 
+                src="/lovable-uploads/5387b306-1722-405a-b522-1b9477c93dd5.png" 
                 alt="Utilities and municipal EV charging projects" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -289,7 +289,7 @@ const Industries = () => {
       </section>
 
       {/* Mobile/Off-Grid Solutions */}
-      <section className="py-20 bg-white">
+      <section id="mobile" className="py-20 bg-white">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="lg:w-1/2">
@@ -346,7 +346,7 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image9.jpg" 
+                src="/lovable-uploads/27c461ed-71df-454a-b789-8fef857a27a9.png" 
                 alt="Mobile and off-grid EV charging solutions" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -356,7 +356,7 @@ const Industries = () => {
       </section>
 
       {/* Investment Groups */}
-      <section className="py-20 bg-[#DEDEDE]">
+      <section id="investment" className="py-20 bg-[#DEDEDE]">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
             <div className="lg:w-1/2">
@@ -413,7 +413,7 @@ const Industries = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/image-investment.jpg" 
+                src="/lovable-uploads/3f0405ff-4b08-454c-bed9-b1354aa492a7.png" 
                 alt="Investment group EV charging solutions" 
                 className="rounded-lg shadow-lg w-full"
               />
