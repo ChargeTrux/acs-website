@@ -59,12 +59,12 @@ const Navbar = () => {
     <nav className="bg-[#003B73] sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - much larger size */}
+          {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/0123177a-d92d-43da-9086-fefb9a3c6dce.png" 
+              src="/lovable-uploads/3fdb763a-8ceb-4c99-810e-21f09d8f1e98.png" 
               alt="Advanced Charging Systems Logo" 
-              className="h-48" 
+              className="h-16" 
             />
           </Link>
 
