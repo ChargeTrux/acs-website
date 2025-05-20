@@ -46,8 +46,16 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [api]);
 
+  // Preload images to ensure they display properly
+  useEffect(() => {
+    heroImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
-    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-[#0A1A2F]">
+    <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center bg-[#0A1A2F]">
       <Carousel
         setApi={setApi}
         className="w-full h-full absolute inset-0"
@@ -63,7 +71,7 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full" 
                 style={{ 
                   backgroundImage: `url(${image})`,
-                  opacity: 0.8
+                  opacity: 0.9
                 }} 
               />
             </CarouselItem>
