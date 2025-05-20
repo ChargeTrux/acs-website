@@ -94,9 +94,13 @@ const Navbar = () => {
   return <nav className={`sticky top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-md" : "bg-[#0A1A2F]"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo - updated with new logo */}
+          {/* Logo - increased size by 4x */}
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/206ce4f6-35bb-4d83-b3f6-bf6ca3fbca59.png" alt="Advanced Charging Systems Logo" className="h-8 object-fill" />
+            <img 
+              src="/lovable-uploads/206ce4f6-35bb-4d83-b3f6-bf6ca3fbca59.png" 
+              alt="Advanced Charging Systems Logo" 
+              className="h-32 object-fill" 
+            />
           </Link>
 
           {/* Desktop Navigation */}
