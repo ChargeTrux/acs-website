@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -33,10 +34,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - with reduced height */}
-      <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center bg-[#0A1A2F]">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/2793a0c1-4ab9-4474-bb94-74bf6d812a08.png')] bg-cover bg-center opacity-60 bg-no-repeat"></div>
-        <div className="container relative z-10 text-center px-4">
+      {/* Hero Section - with text positioned lower */}
+      <section className="relative h-[65vh] min-h-[500px] flex items-end justify-center bg-[#0A1A2F]">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/2793a0c1-4ab9-4474-bb94-74bf6d812a08.png')] bg-cover bg-center opacity-80 bg-no-repeat"></div>
+        {/* Increased the bottom padding to move text lower and added a semi-transparent overlay */}
+        <div className="relative z-10 text-center w-full py-16 px-4 bg-gradient-to-t from-black/70 to-transparent">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
             Connecting Power to Possibility
           </h1>
