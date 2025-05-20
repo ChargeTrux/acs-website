@@ -4,9 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Check, ChevronRight, MapPin, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  // State to track the current text color
+  const [textColor, setTextColor] = useState("#FFFFFF"); // Default white color
+  
   useEffect(() => {
     // Simple scroll animation for elements
     const observerOptions = {
@@ -32,6 +35,15 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Function to cycle through different text colors for better visibility
+  const changeTextColor = () => {
+    // Cycle through a few high-contrast colors
+    const colors = ["#FFFFFF", "#F1F0FB", "#FEF7CD", "#E5DEFF", "#D3E4FD"];
+    const currentIndex = colors.indexOf(textColor);
+    const nextIndex = (currentIndex + 1) % colors.length;
+    setTextColor(colors[nextIndex]);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - with text positioned lower */}
@@ -42,9 +54,18 @@ const Index = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
             Connecting Power to Possibility
           </h1>
-          <p className="text-xl text-white mb-8 max-w-3xl mx-auto font-open">
-            Advanced Charging Systems and Integration delivers end-to-end consulting, design, and system integration for commercial and fleet EV charging infrastructure—both on-grid and off-grid.
-          </p>
+          <div className="relative">
+            <p 
+              className="text-xl mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" 
+              style={{ color: textColor }}
+              onClick={changeTextColor}
+            >
+              Advanced Charging Systems and Integration delivers end-to-end consulting, design, and system integration for commercial and fleet EV charging infrastructure—both on-grid and off-grid.
+            </p>
+            <div className="text-xs text-white/60 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
+              Click text to improve visibility
+            </div>
+          </div>
           <Button 
             asChild
             className="bg-[#0075FF] hover:bg-[#0066DD] text-white font-semibold px-6 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]"
