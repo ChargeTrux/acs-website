@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -59,12 +58,12 @@ const Navbar = () => {
     <nav className="bg-[#003B73] sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - made even larger */}
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/0123177a-d92d-43da-9086-fefb9a3c6dce.png" 
               alt="Advanced Charging Systems Logo" 
-              className="h-28" 
+              className="h-32" 
             />
           </Link>
 

@@ -15,12 +15,12 @@ const HeroSection = () => {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  // Hero images array
+  // Update hero images array with the newly uploaded images
   const heroImages = [
-    "/lovable-uploads/edf50425-4a8c-40ae-9d10-f8164067b6b6.png",
-    "/lovable-uploads/c269ac45-4010-4f11-b689-f86fd961c3ee.png",
-    "/lovable-uploads/9e8327a7-be64-46a3-a16c-2a1c0f3b1857.png",
-    "/lovable-uploads/0489b82a-0392-4f4b-bc9c-6f60f2a335cb.png",
+    "/lovable-uploads/20cd42fc-a182-47ca-880a-cb52a88130fd.png",
+    "/lovable-uploads/03d38454-e1de-437b-9182-5a42078c2c70.png",
+    "/lovable-uploads/4bc6edba-cb37-4d73-823d-37c5a9def376.png",
+    "/lovable-uploads/7357143d-f2ab-4ca4-a639-3800f5422163.png",
     "/lovable-uploads/6026693b-c901-4760-ae1e-775b17a711ea.png",
   ];
 
@@ -47,7 +47,7 @@ const HeroSection = () => {
   }, [api]);
 
   return (
-    <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-[#0A1A2F]">
+    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-[#0A1A2F]">
       <Carousel
         setApi={setApi}
         className="w-full h-full absolute inset-0"
@@ -63,7 +63,7 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full" 
                 style={{ 
                   backgroundImage: `url(${image})`,
-                  opacity: 0.7
+                  opacity: 0.8
                 }} 
               />
             </CarouselItem>
