@@ -12,9 +12,9 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="/lovable-uploads/28de2e79-a9cd-4de2-85d9-fd576c0ccbee.png" 
+                src="/lovable-uploads/3f0405ff-4b08-454c-bed9-b1354aa492a7.png" 
                 alt="Advanced Charging Systems Logo" 
-                className="h-20" 
+                className="h-16" 
               />
             </div>
             <h3 className="text-xl font-semibold mb-2 font-montserrat text-white">Connecting Power to Possibility</h3>
