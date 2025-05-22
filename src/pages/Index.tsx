@@ -50,12 +50,10 @@ const Index = () => {
           <div className="relative">
             <p style={{
             color: textColor
-          }} onClick={changeTextColor} className="mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-slate-50 text-base my-[22px]">
-              Advanced Charging Systems and Integration delivers end-to-end consulting, design, and system integration for commercial and fleet EV charging infrastructure—both on-grid and off-grid.
-            </p>
+          }} onClick={changeTextColor} className="mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-slate-50 text-base my-[22px]">Advanced Charging Systems and Integration delivers end-to-end consulting, design, and system integration for commercial and fleet EV charging infrastructure—both on-grid and off-grid.
+          </p>
             <div className="text-xs text-white/60 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
-              Click text to improve visibility
-            </div>
+          </div>
           </div>
           <Button asChild className="bg-[#0075FF] hover:bg-[#0066DD] text-white font-semibold px-6 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]">
             <Link to="/contact">Request a Consultation</Link>
