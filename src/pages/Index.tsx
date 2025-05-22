@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -40,18 +39,18 @@ const Index = () => {
     setTextColor(colors[nextIndex]);
   };
   return <div className="min-h-screen">
-      {/* Hero Section - with reduced height */}
-      <section className="relative h-[55vh] min-h-[450px] flex items-end justify-center bg-[#0A1A2F]">
+      {/* Hero Section - with text positioned lower */}
+      <section className="relative h-[65vh] min-h-[500px] flex items-end justify-center bg-[#0A1A2F]">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/cf8c24b8-db7d-4784-ab6c-f90047b1d950.png')] bg-cover bg-center opacity-80 bg-no-repeat my-0 px-0 py-0 mx-0 rounded-none"></div>
-        {/* Adjusted padding to fit better with the smaller hero section */}
-        <div className="relative z-10 text-center w-full py-12 px-4 bg-gradient-to-t from-black/70 to-transparent">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat lg:text-4xl my-[30px]">
+        {/* Increased the bottom padding to move text lower and added a semi-transparent overlay */}
+        <div className="relative z-10 text-center w-full py-16 px-4 bg-gradient-to-t from-black/70 to-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat lg:text-4xl my-[40px]">
             Connecting Power to Possibility
           </h1>
           <div className="relative">
             <p style={{
             color: textColor
-          }} onClick={changeTextColor} className="mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-slate-50 text-base my-[20px]">
+          }} onClick={changeTextColor} className="mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-slate-50 text-base my-[22px]">
               Advanced Charging Systems and Integration delivers end-to-end consulting, design, and system integration for commercial and fleet EV charging infrastructure—both on-grid and off-grid.
             </p>
             <div className="text-xs text-white/60 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
