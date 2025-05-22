@@ -41,7 +41,7 @@ const Index = () => {
   return <div className="min-h-screen">
       {/* Hero Section - with text positioned lower */}
       <section className="relative h-[65vh] min-h-[500px] flex items-end justify-center bg-[#0A1A2F]">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/cf8c24b8-db7d-4784-ab6c-f90047b1d950.png')] bg-cover bg-center opacity-80 bg-no-repeat"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/cf8c24b8-db7d-4784-ab6c-f90047b1d950.png')] bg-cover bg-center opacity-80 bg-no-repeat my-0 px-0 py-0 mx-[111px]"></div>
         {/* Increased the bottom padding to move text lower and added a semi-transparent overlay */}
         <div className="relative z-10 text-center w-full py-16 px-4 bg-gradient-to-t from-black/70 to-transparent">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat lg:text-4xl my-[40px]">
