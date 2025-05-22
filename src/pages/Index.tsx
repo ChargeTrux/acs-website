@@ -1,23 +1,20 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Check, ChevronRight, MapPin, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 const Index = () => {
   // State to track the current text color
   const [textColor, setTextColor] = useState("#FFFFFF"); // Default white color
-  
+
   useEffect(() => {
     // Simple scroll animation for elements
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
-    
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate-fade-in");
@@ -26,12 +23,10 @@ const Index = () => {
         }
       });
     }, observerOptions);
-    
     document.querySelectorAll(".animate-on-scroll").forEach(element => {
       element.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-500", "ease-out");
       observer.observe(element);
     });
-    
     return () => observer.disconnect();
   }, []);
 
@@ -43,33 +38,26 @@ const Index = () => {
     const nextIndex = (currentIndex + 1) % colors.length;
     setTextColor(colors[nextIndex]);
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section - with text positioned lower */}
       <section className="relative h-[65vh] min-h-[500px] flex items-end justify-center bg-[#0A1A2F]">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/cf8c24b8-db7d-4784-ab6c-f90047b1d950.png')] bg-cover bg-center opacity-80 bg-no-repeat"></div>
         {/* Increased the bottom padding to move text lower and added a semi-transparent overlay */}
         <div className="relative z-10 text-center w-full py-16 px-4 bg-gradient-to-t from-black/70 to-transparent">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-montserrat">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat lg:text-4xl">
             Connecting Power to Possibility
           </h1>
           <div className="relative">
-            <p 
-              className="text-xl mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" 
-              style={{ color: textColor }}
-              onClick={changeTextColor}
-            >
+            <p style={{
+            color: textColor
+          }} onClick={changeTextColor} className="mb-8 max-w-3xl mx-auto font-open transition-colors duration-300 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-xl">
               Advanced Charging Systems and Integration delivers end-to-end consulting, design, and system integration for commercial and fleet EV charging infrastructure—both on-grid and off-grid.
             </p>
             <div className="text-xs text-white/60 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2">
               Click text to improve visibility
             </div>
           </div>
-          <Button 
-            asChild
-            className="bg-[#0075FF] hover:bg-[#0066DD] text-white font-semibold px-6 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]"
-          >
+          <Button asChild className="bg-[#0075FF] hover:bg-[#0066DD] text-white font-semibold px-6 py-3 rounded-lg text-lg transition-all hover:scale-[1.02]">
             <Link to="/contact">Request a Consultation</Link>
           </Button>
         </div>
@@ -145,10 +133,7 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center mt-12">
-            <Button 
-              asChild
-              className="bg-[#00C65E] hover:bg-[#00B050] text-white font-semibold px-6 py-2 rounded-lg transition-all hover:scale-[1.02]"
-            >
+            <Button asChild className="bg-[#00C65E] hover:bg-[#00B050] text-white font-semibold px-6 py-2 rounded-lg transition-all hover:scale-[1.02]">
               <Link to="/services" className="flex items-center">
                 Explore Our Services
                 <ChevronRight className="ml-2" size={18} />
@@ -170,10 +155,7 @@ const Index = () => {
               <p className="text-gray-600 mb-8 font-open">
                 We bring charging solutions to locations others write off as infeasible, with field-configurable power inputs from 240V single-phase to direct DC battery inputs.
               </p>
-              <Button 
-                asChild
-                className="bg-[#00C65E] hover:bg-[#00B050] text-white font-semibold px-6 py-2 rounded-lg transition-all hover:scale-[1.02]"
-              >
+              <Button asChild className="bg-[#00C65E] hover:bg-[#00B050] text-white font-semibold px-6 py-2 rounded-lg transition-all hover:scale-[1.02]">
                 <Link to="/technology" className="flex items-center">
                   Learn More
                   <ChevronRight className="ml-2" size={18} />
@@ -181,11 +163,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="lg:w-2/5 animate-on-scroll">
-              <img 
-                src="/lovable-uploads/db362e91-d255-48e0-8f48-cc18d5b74796.png" 
-                alt="Flexible power integration with EV charging stations" 
-                className="rounded-lg shadow-lg w-full"
-              />
+              <img src="/lovable-uploads/db362e91-d255-48e0-8f48-cc18d5b74796.png" alt="Flexible power integration with EV charging stations" className="rounded-lg shadow-lg w-full" />
             </div>
           </div>
         </div>
@@ -249,10 +227,7 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center mt-12">
-            <Button 
-              asChild
-              className="bg-[#00C65E] hover:bg-[#00B050] text-white font-semibold px-6 py-2 rounded-lg transition-all hover:scale-[1.02]"
-            >
+            <Button asChild className="bg-[#00C65E] hover:bg-[#00B050] text-white font-semibold px-6 py-2 rounded-lg transition-all hover:scale-[1.02]">
               <Link to="/industries" className="flex items-center">
                 View Industries
                 <ChevronRight className="ml-2" size={18} />
@@ -308,14 +283,9 @@ const Index = () => {
                 <Check className="mr-2" /> West Coast
               </h3>
               <div className="grid grid-cols-2 gap-2">
-                {[
-                  'Seattle', 'Portland', 'San Francisco', 'Oakland', 
-                  'San Jose', 'Los Angeles', 'Orange County', 'San Diego'
-                ].map((city) => (
-                  <div key={city} className="bg-[#132A47] text-white py-1 px-3 rounded-full text-center font-open">
+                {['Seattle', 'Portland', 'San Francisco', 'Oakland', 'San Jose', 'Los Angeles', 'Orange County', 'San Diego'].map(city => <div key={city} className="bg-[#132A47] text-white py-1 px-3 rounded-full text-center font-open">
                     {city}
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
@@ -325,14 +295,9 @@ const Index = () => {
                 <Check className="mr-2" /> Gulf Coast & Southwest
               </h3>
               <div className="grid grid-cols-2 gap-2">
-                {[
-                  'Phoenix', 'Albuquerque', 'Dallas', 'Houston', 
-                  'Austin', 'San Antonio', 'New Orleans', 'Tampa', 'Orlando'
-                ].map((city) => (
-                  <div key={city} className="bg-[#132A47] text-white py-1 px-3 rounded-full text-center font-open">
+                {['Phoenix', 'Albuquerque', 'Dallas', 'Houston', 'Austin', 'San Antonio', 'New Orleans', 'Tampa', 'Orlando'].map(city => <div key={city} className="bg-[#132A47] text-white py-1 px-3 rounded-full text-center font-open">
                     {city}
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
@@ -342,14 +307,9 @@ const Index = () => {
                 <Check className="mr-2" /> East Coast & Southeast
               </h3>
               <div className="grid grid-cols-2 gap-2">
-                {[
-                  'Atlanta', 'Charlotte', 'Raleigh', 'Norfolk', 
-                  'Washington DC', 'Baltimore', 'Philadelphia', 'New York', 'Boston'
-                ].map((city) => (
-                  <div key={city} className="bg-[#132A47] text-white py-1 px-3 rounded-full text-center font-open">
+                {['Atlanta', 'Charlotte', 'Raleigh', 'Norfolk', 'Washington DC', 'Baltimore', 'Philadelphia', 'New York', 'Boston'].map(city => <div key={city} className="bg-[#132A47] text-white py-1 px-3 rounded-full text-center font-open">
                     {city}
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -359,8 +319,6 @@ const Index = () => {
           </p>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
