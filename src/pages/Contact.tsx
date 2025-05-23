@@ -9,6 +9,7 @@ import { toast } from "@/hooks/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import CalendlyModal from "@/components/CalendlyModal";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const Contact = () => {
     consent: false
   });
   
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [calendlyOpen, setCalendlyOpen] = useState(false);
   
@@ -61,7 +63,7 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate all fields
@@ -86,27 +88,60 @@ const Contact = () => {
       });
       return;
     }
+
+    setIsSubmitting(true);
     
-    // Here you would typically send the form data to a backend API
-    console.log("Form submitted:", formData);
-    
-    // Show success message
-    toast({
-      title: "Consultation Request Submitted",
-      description: "We'll be in touch with you soon about your EV charging project.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      projectType: "",
-      projectTimeline: "",
-      message: "",
-      consent: false
-    });
+    try {
+      // Insert data into Supabase
+      const { error } = await supabase
+        .from('consultation_requests')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          company: formData.company || null,
+          project_type: formData.projectType || null,
+          project_timeline: formData.projectTimeline || null,
+          message: formData.message || null
+        });
+
+      if (error) {
+        console.error("Supabase error:", error);
+        toast({
+          title: "Submission Failed",
+          description: "There was an error submitting your request. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+      
+      // Show success message
+      toast({
+        title: "Consultation Request Submitted",
+        description: "We'll be in touch with you soon about your EV charging project.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        projectType: "",
+        projectTimeline: "",
+        message: "",
+        consent: false
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -259,8 +294,9 @@ const Contact = () => {
                   <Button 
                     type="submit"
                     className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-8 py-3 rounded-lg text-lg transition-all font-montserrat w-full hover:scale-[1.02]"
+                    disabled={isSubmitting}
                   >
-                    Request Consultation
+                    {isSubmitting ? "Submitting..." : "Request Consultation"}
                   </Button>
                 </form>
               </div>
