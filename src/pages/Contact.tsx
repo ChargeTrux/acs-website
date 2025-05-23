@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +8,7 @@ import { Link } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import CalendlyModal from "@/components/CalendlyModal";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +23,7 @@ const Contact = () => {
   });
   
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [calendlyOpen, setCalendlyOpen] = useState(false);
   
   const validateField = (name: string, value: string | boolean) => {
     if (name === 'name' && typeof value === 'string' && !value.trim()) {
@@ -284,14 +285,20 @@ const Contact = () => {
                 </div>
                 
                 <Button 
-                  asChild
                   className="bg-[#0075FF] hover:bg-[#0060CC] text-white font-semibold px-6 py-2 rounded-lg transition-all w-full mb-8 font-montserrat hover:scale-[1.02]"
+                  onClick={() => setCalendlyOpen(true)}
                 >
-                  <a href="#" className="flex items-center justify-center">
+                  <span className="flex items-center justify-center">
                     Schedule Now
                     <ChevronRight className="ml-2" size={18} />
-                  </a>
+                  </span>
                 </Button>
+                
+                {/* Calendly Modal */}
+                <CalendlyModal
+                  open={calendlyOpen}
+                  onOpenChange={setCalendlyOpen}
+                />
                 
                 <Separator className="bg-gray-600 my-8" />
                 
